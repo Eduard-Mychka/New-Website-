@@ -1,0 +1,230 @@
+.banner {
+   position: relative;
+   width: 100%;
+   padding: 100px;
+   min-height: 100vh;
+   background: url(/img/header/bg.jpg);
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   transition: 0.5s;
+   z-index: 2;
+
+   &.active {
+      transform: translateX(-400px);
+
+      header #toggle {
+         &:before {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+         }
+
+         &:after {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+         }
+      }
+   }
+
+   header {
+      position: absolute;
+      justify-content: space-between;
+      padding: 40px 100px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      z-index: 10000;
+      transition: 0.6s;
+
+      .logo {
+         position: relative;
+         font-weight: 700;
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+         font-size: 2em;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         transition: 0.6s;
+      }
+
+      #toggle {
+         position: relative;
+         width: 30px;
+         height: 30px;
+         cursor: pointer;
+
+         &:before {
+            content: "";
+            position: absolute;
+            top: 7px;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+         }
+
+         &:after {
+            content: "";
+            position: absolute;
+            bottom: 7px;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+         }
+      }
+   }
+
+   .content {
+      max-width: 600px;
+
+      h2 {
+         color: #fff;
+         font-size: 2.5em;
+
+         span {
+            color: #40c3ff;
+            font-size: 1.2em;
+         }
+      }
+
+      p {
+         font-size: 1.2em;
+         color: #fff;
+         font-weight: 300;
+      }
+
+      a {
+         position: relative;
+         display: inline-block;
+         margin-top: 20px;
+         background: #fff;
+         color: #000;
+         padding: 10px 30px;
+         text-decoration: none;
+         font-size: 1.2em;
+         font-weight: 500;
+      }
+   }
+
+   .sci {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      right: 100px;
+
+      li {
+         list-style: none;
+
+         a {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+            border: 1px solid #ffffff;
+            margin: 10px 0 0;
+
+            &:hover {
+               background: #fff;
+            }
+         }
+
+         img {
+            max-width: 20px;
+            filter: invert(1);
+            mix-blend-mode: difference;
+         }
+      }
+   }
+}
+
+#navigation {
+   display: grid;
+   position: fixed;
+   place-items: center;
+   top: 0;
+   right: -200px;
+   width: 400px;
+   height: 100vh;
+   background: #40c3ff;
+   transition: 0.5s;
+   z-index: 1;
+
+   &.active {
+      right: 0;
+   }
+
+   ul {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      li {
+         list-style: none;
+
+         a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 2em;
+            font-weight: 600;
+            text-transform: uppercase;
+         }
+      }
+   }
+}
+
+@media (max-width: 767px) {
+   .banner {
+      padding: 100px 50px 150px;
+
+      &.active {
+         transform: translateX(-250px);
+      }
+
+      header {
+         padding: 20px 50px;
+      }
+
+      .content {
+         h2 {
+            font-size: 1.8em;
+         }
+
+         p,
+         a {
+            font-size: 1em;
+         }
+      }
+
+      .sci {
+         position: absolute;
+         bottom: 50px;
+         right: initial;
+         flex-direction: row;
+
+         li {
+            a {
+               margin: initial;
+               margin-right: 10px;
+            }
+         }
+      }
+   }
+
+   #navigation {
+      width: 250px;
+
+      ul {
+         li {
+            a {
+               font-size: 1.5em;
+               margin: 5px 0;
+            }
+         }
+      }
+   }
+}
