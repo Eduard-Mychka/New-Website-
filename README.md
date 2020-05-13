@@ -1,2 +1,2 @@
 # Site Head
-https://eduard-mychka.github.io/New-Website-/.
+https://eduard-mychka.github.io/Site-Head/
