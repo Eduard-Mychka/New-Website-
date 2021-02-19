@@ -1,3 +1,2 @@
-# Site head page 2020 year
-https://eduard-mychka.github.io/site-header-page/.
+# [Demo Site head page 2020](https://eduard-mychka.github.io/site-header-page/)
 
